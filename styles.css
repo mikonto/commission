@@ -1,0 +1,162 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+/*   line-height: 1.5; */
+  color: #333;
+}
+
+h2,
+h3 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.container, .results-and-chart-container, .visualization-container {
+    display: flex;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+.section {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  flex: 3;
+}
+
+.input-group input,
+.input-group select {
+  flex: 2;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+.results-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  /*  margin-top: 20px; */
+}
+
+.results-and-chart-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: stretch; /* Ensures that the results and chart sections are of the same height */
+}
+
+.results-section,
+.chart-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 10px; /* Add space between results and chart */
+  display: flex; /* New */
+  flex-direction: column; /* New */
+}
+
+.chart-section {
+  margin-right: 0; /* Reset right margin for chart section */
+  position: relative; /* New */
+}
+
+canvas#earningsChart {
+  max-width: 100%;
+  max-height: 70%; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.visualization-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: stretch;
+}
+
+.visualization-params,
+.range-chart-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+
+.range-chart-section {
+  margin-right: 0;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {  
+    /* For main and other relevant containers */
+    .container, 
+    .results-and-chart-container, 
+    .visualization-container,
+    .results-section,
+    .chart-section,
+    .visualization-params,
+    .range-chart-section {
+        flex-direction: column;
+        margin: 0;
+        padding: 10px;  /* Adjust this value if necessary */
+        max-width: 100%;
+  
+    }
+
+    /* Reset any margin that's between the containers */
+    .results-section,
+    .chart-section,
+    .visualization-params,
+    .range-chart-section {
+        margin-right: 0;
+        margin-bottom: 10px;  /* A small space between sections */
+    }
+
+    body {
+        padding: 10px;  /* Reduce padding to better fit on mobile */
+    }
+}
+  

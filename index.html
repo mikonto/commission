@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commission Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <h2>Commission Calculator</h2>
+    <div class="container">
+      <div class="section">
+        <h3 class="section-title">Client Information</h3>
+
+        <div class="input-group">
+          <label for="smallClientPrice"
+            >Yearly revenue Small Clients (€):</label
+          >
+          <input type="number" id="smallClientPrice" value="1500" />
+        </div>
+        <div class="input-group">
+          <label for="largeClientPrice"
+            >Yearly revenue Large Clients (€):</label
+          >
+          <input type="number" id="largeClientPrice" value="2500" />
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">Sales Without Commission</h3>
+        <div class="input-group">
+          <label for="salesWithoutCommission">Clients:</label>
+          <input type="number" id="salesWithoutCommission" value="50" />
+        </div>
+        <div class="input-group">
+          <label for="salesWithoutCommissionSmallClientsPercentage"
+            >Small Clients (%):</label
+          >
+          <input
+            type="number"
+            id="salesWithoutCommissionSmallClientsPercentage"
+            value="65"
+          />
+        </div>
+      </div>
+      <div class="section">
+        <h3 class="section-title">Sales with Commission</h3>
+        <div class="input-group">
+          <label for="salesWithCommission">Clients:</label>
+          <input type="number" id="salesWithCommission" value="100" />
+        </div>
+        <div class="input-group">
+          <label for="salesWithCommissionSmallClientsPercentage"
+            >Small Clients (%):</label
+          >
+          <input
+            type="number"
+            id="salesWithCommissionSmallClientsPercentage"
+            value="65"
+          />
+        </div>
+        <div class="input-group">
+          <label for="commissionValue">Commission Value (% or €):</label>
+          <input type="number" id="commissionValue" value="20" />
+        </div>
+        <div class="input-group">
+          <label for="isFixedCommission">Is Commission Fixed (€)?</label>
+          <input type="checkbox" id="isFixedCommission" />
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">Costs and Taxes</h3>
+        <div class="input-group">
+          <label for="ipFeePercentage">Worksystems Fee (%)</label>
+          <input type="number" id="ipFeePercentage" value="10" />
+        </div>
+        <div class="input-group">
+          <label for="developerHours">Developer Hours Per Month:</label>
+          <input type="number" id="developerHours" value="80" />
+        </div>
+        <div class="input-group">
+          <label for="developerHourlyCost">Developer Hourly Cost (€):</label>
+          <input type="number" id="developerHourlyCost" value="40" />
+        </div>
+        <div class="input-group">
+          <label for="overhead">Other overhead (€/month):</label>
+          <input type="number" id="overhead" value="700" />
+        </div>
+        <div class="input-group">
+          <label for="taxRate">Danish Tax %:</label>
+          <input type="number" id="taxRate" value="22" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Results and Graph Container -->
+    <div class="results-and-chart-container">
+      <!-- Results Section -->
+      <div class="results-section">
+        <h3 class="section-title">Results</h3>
+
+        <p>
+          Total Revenue (<span id="currencySymbol1">€</span>):
+          <span id="totalRevenue">0</span>
+        </p>
+        <p>
+          Total Commission(<span id="currencySymbol3">€</span>):
+          <span id="mentorCommission">0</span>
+        </p>
+        <p>
+          Total Profit Before Tax (<span id="currencySymbol2">€</span>):
+          <span id="profitBeforeTax">0</span>
+        </p>
+
+        <p>
+          <strong>
+            Total Net Profit After Taxes (<span id="currencySymbol4">€</span>):
+            <span id="netProfit">0</span>
+          </strong>
+        </p>
+      </div>
+
+      <!--Graph Section -->
+      <div class="chart-section">
+        <h3 class="section-title">Earnings Chart</h3>
+        <canvas id="earningsChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+
+    <!-- <button onclick="calculateWithFixedClientAmount()">Calculate</button> -->
+    <button onclick="calculateWithFixedClientAmount()">Calculate</button>
+
+    <script src="main.js"></script>
+  </body>
+</html>
