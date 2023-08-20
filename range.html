@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commission Calculator With Range</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h2>Commission calculator (range)</h2>
+      <h2>
+        <a href="index.html"> <i class="fa-solid fa-arrow-left"></i></a>
+      </h2>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h3 class="section-title">Sales information</h3>
+
+        <div class="input-group">
+          <label for="salesMin">Sales min</label>
+          <input type="number" id="salesMin" value="50" />
+        </div>
+
+        <div class="input-group">
+          <label for="salesMax">Sales max</label>
+          <input type="number" id="salesMax" value="100" />
+        </div>
+        <div class="input-group">
+          <label for="clientPrice">Average yearly revenue per Sale</label>
+          <input type="number" id="clientPrice" value="1500" />
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">Commission</h3>
+        <div class="input-group">
+          <label for="commissionRatio">How many sales from total? (%)</label>
+          <input type="number" id="commissionRatio" value="50" />
+        </div>
+        <div class="input-group">
+          <label for="commission">Commission (% or fixed sum)</label>
+          <input type="number" id="commission" value="20" />
+        </div>
+        <div class="input-group">
+          <label for="isFixedCommission">Is commission fixed?</label>
+          <input type="checkbox" id="isFixedCommission" />
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">Costs and taxes</h3>
+        <div class="input-group">
+          <label for="ipFeePercentage">Worksystems payment (%)</label>
+          <input type="number" id="ipFeePercentage" value="10" />
+        </div>
+        <div class="input-group">
+          <label for="developerHours">Developer hours per month</label>
+          <input type="number" id="developerHours" value="80" />
+        </div>
+        <div class="input-group">
+          <label for="developerHourlyCost">Developer hourly cost:</label>
+          <input type="number" id="developerHourlyCost" value="40" />
+        </div>
+        <div class="input-group">
+          <label for="overhead">Other overhead (per month):</label>
+          <input type="number" id="overhead" value="700" />
+        </div>
+        <div class="input-group">
+          <label for="taxRate">Danish tax %</label>
+          <input type="number" id="taxRate" value="22" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Results and Graph Container -->
+    <div class="results-and-chart-container">
+      <!--Graph Section -->
+      <div class="chart-section">
+        <h3 class="section-title">Earnings chart</h3>
+        <canvas id="earningsChart"></canvas>
+      </div>
+    </div>
+
+    <!-- <button onclick="calculateWithFixedClientAmount()">Calculate</button> -->
+    <button id="calculateButton">Calculate</button>
+
+    <script src="range.js"></script>
+  </body>
+</html>

@@ -1,23 +1,40 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding: 10px;
   background-color: #f5f5f5;
-/*   line-height: 1.5; */
+  /*   line-height: 1.5; */
   color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
 h2,
 h3 {
-  border-bottom: 1px solid #ddd;
+  /*   border-bottom: 1px solid #ddd; */
   padding-bottom: 10px;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 
-.container, .results-and-chart-container, .visualization-container {
-    display: flex;
-    gap: 20px;
-    max-width: 100%;
-  }
+a {
+  text-decoration: none;
+  color: inherit; /* This ensures the link color matches the surrounding text */
+}
+
+.container,
+.results-and-chart-container,
+.visualization-container {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+}
 
 .section {
   flex: 1;
@@ -46,11 +63,11 @@ h3 {
 
 .input-group input,
 .input-group select {
-  flex: 2;
+  flex: 1; /* Adjusts the size proportionately */
+  max-width: 50px; /* Adjust this value to your preference */
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
 }
 
 button {
@@ -67,7 +84,6 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
 
 .results-section {
   flex: 1;
@@ -102,12 +118,6 @@ button:hover {
   position: relative; /* New */
 }
 
-canvas#earningsChart {
-  max-width: 100%;
-  max-height: 70%; /* Adjust as needed */
-  margin: 0 auto;
-}
-
 .visualization-container {
   display: flex;
   justify-content: space-between;
@@ -129,34 +139,38 @@ canvas#earningsChart {
   margin-right: 0;
 }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {  
-    /* For main and other relevant containers */
-    .container, 
-    .results-and-chart-container, 
-    .visualization-container,
-    .results-section,
-    .chart-section,
-    .visualization-params,
-    .range-chart-section {
-        flex-direction: column;
-        margin: 0;
-        padding: 10px;  /* Adjust this value if necessary */
-        max-width: 100%;
-  
-    }
-
-    /* Reset any margin that's between the containers */
-    .results-section,
-    .chart-section,
-    .visualization-params,
-    .range-chart-section {
-        margin-right: 0;
-        margin-bottom: 10px;  /* A small space between sections */
-    }
-
-    body {
-        padding: 10px;  /* Reduce padding to better fit on mobile */
-    }
+#earningsChart {
+  max-height: 400px;
+  /*width: 100%; */
+  display: block; /* Makes sure canvas doesn't behave inline */
 }
-  
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Reduce padding to better fit on mobile */
+  }
+
+  /* For main and other relevant containers */
+  .container,
+  .results-and-chart-container,
+  .visualization-container,
+  .results-section,
+  .chart-section,
+  .visualization-params,
+  .range-chart-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 10px; /* Adjust this value if necessary */
+    max-width: 100%;
+  }
+
+  /* Reset any margin that's between the containers */
+  .results-section,
+  .chart-section,
+  .visualization-params,
+  .range-chart-section {
+    margin-right: 0;
+    margin-bottom: 10px; /* A small space between sections */
+  }
+}
