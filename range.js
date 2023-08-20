@@ -121,10 +121,8 @@ function createFixedChart(sales, totalRevenues, totalCommission, netProfit) {
         {
           label: "Commission",
           data: totalCommission,
-
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
-
           borderWidth: 1,
           fill: false,
         },
@@ -143,7 +141,7 @@ function createFixedChart(sales, totalRevenues, totalCommission, netProfit) {
         x: {
           title: {
             display: true,
-            text: "Total Sales",
+            text: "Sales",
           },
         },
         y: {

@@ -115,7 +115,7 @@ button:hover {
 
 .results-section p {
   margin-top: 10px;
-  margin-bottom: 10px;  /* Adjust this value as per your preference */
+  margin-bottom: 10px; /* Adjust this value as per your preference */
 }
 
 .chart-section {
@@ -150,8 +150,6 @@ button:hover {
   display: block; /* Makes sure canvas doesn't behave inline */
 }
 
-
-
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   body {
@@ -171,8 +169,6 @@ button:hover {
     padding: 10px; /* Adjust this value if necessary */
     max-width: 100%;
   }
-
-
 
   /* Reset any margin that's between the containers */
   .results-section,
