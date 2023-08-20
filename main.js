@@ -97,7 +97,7 @@ function calculateMetrics(inputValues) {
   const ipFee = totalRevenue * ipFeePercentage;
   const profitBeforeTax =
     totalRevenue - (ipFee + developerTotalCost + overhead + mentorCommission);
-  const taxes = profitBeforeTax * taxRate;
+  const taxes = profitBeforeTax <= 0 ? 0 : profitBeforeTax * taxRate;
   const netProfit = profitBeforeTax - taxes;
 
   return {

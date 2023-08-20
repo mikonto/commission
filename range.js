@@ -52,7 +52,7 @@ function calculateMetrics(inputValues, sales) {
   const ipFee = totalRevenue * ipFeePercentage;
   const profitBeforeTax =
     totalRevenue - (ipFee + developerTotalCost + overhead + totalCommission);
-  const taxes = profitBeforeTax * taxRate;
+  const taxes = profitBeforeTax <= 0 ? 0 : profitBeforeTax * taxRate;
   const netProfit = profitBeforeTax - taxes;
 
   return {
